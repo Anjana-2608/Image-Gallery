@@ -76,11 +76,11 @@ window.addEventListener('scroll',function(e){
     console.log(clientHeight);
     console.log(scrollHeight);
     console.log(scrollTop);
-    if(scrollTop + clientHeight >= scrollHeight)
+    if(scrollTop + clientHeight >= scrollHeight-10)
     {
         getImage();
     }
-})
+},{ passive: true })
 
 
 getImage();
