@@ -72,7 +72,6 @@ const getImage = async () => {
 };
 
 window.addEventListener('scroll',function(e){
-    // console.log(e);
     let {clientHeight,scrollHeight,scrollTop}=e.target.documentElement;
     console.log(clientHeight);
     console.log(scrollHeight);
