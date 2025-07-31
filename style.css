@@ -1,0 +1,224 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #d9b59e; */
+    background: linear-gradient(180deg, rgba(217, 181, 158, 1) 0%, rgba(83, 211, 237, 0.76) 100%);
+}
+
+.image-container {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 70px;
+}
+
+.image-container img {
+    height: 20rem;
+    width: 15rem;
+    margin: 15px;
+    border-radius: 2rem;
+    transition: 0.5s;
+}
+
+.image-container img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.view-image {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.7);
+    display: none;
+}
+
+.view-image img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 10px;
+}
+
+.view-image span {
+    color: white;
+    position: absolute;
+    top: 2rem;
+    right: 8rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.addBtn{
+    border: 2px solid black;
+    font-size: 20px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #c8c3db;
+    cursor: pointer;
+}
+
+.pop-up {
+    height: 350px;
+    width: 550px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: #edd4d4;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+}
+
+.PopUp-Header{
+    background-color: #a58aa0;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+.pop-up #close{
+    cursor: pointer;
+}
+
+
+.pop-up label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.pop-up input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.pop-up .submit{
+   height: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 65px;
+    justify-content: center;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.pop-up #close:hover{
+    background-color: #b15871
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+.loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        left: 42%;
+        animation: rotate 1s linear infinite;
+        z-index:9999;
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #197538;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        inset: 8px;
+        transform: rotate3d(90, 90, 0, 180deg );
+        border-color: #FF3D00;
+      }
+
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      }
+
+      @media (max-width:450px){
+        .pop-up{
+            width:auto;
+            height: auto;
+        }
+
+        .pop-up #add{
+            font-size: 18px;
+        }
+
+        .pop-up #close{
+            font-size: 0.8rem;
+            right: 1rem;
+        }
+
+        .pop-up input{
+            padding: 4px;
+            font-size: 12px;
+        }
+
+        .pop-up .submit{
+            height: 20px;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+        .pop-up label {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
